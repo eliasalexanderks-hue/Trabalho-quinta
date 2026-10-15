@@ -1,0 +1,3 @@
+import { ShoppingBasket } from "lucide-react";
+import Button from "./Button.jsx";
+export default function ProductCard({ product, onAddToCart }) { return <article className="card product-card"><img src={product.thumbnail} alt={product.title} /><div className="product-content"><p className="eyebrow">{product.category}</p><h2>{product.title}</h2><p>{product.description}</p><div className="product-footer"><strong>{product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</strong><Button aria-label={`Adicionar ${product.title} ao carrinho`} onClick={() => onAddToCart(product)}><ShoppingBasket size={18} aria-hidden="true" />Adicionar</Button></div></div></article>; }
